@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InsuranceActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insurance "
+        android:gravity="center"
+        android:textSize="40sp"
+        android:padding="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cover your get from as low as R75!!"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/parentNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Parent's Name"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/parentSurnameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Parent's Surname"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/petNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pet's Name"
+        android:padding="16dp"/>
+
+    <EditText
+        android:id="@+id/petAgeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pet's Age"
+        android:padding="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/petTypeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pleasee select your pet"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:padding="8dp" />
+
+        <RadioButton
+            android:id="@+id/dogRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Dog" />
+
+        <RadioButton
+            android:id="@+id/catRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Cat" />
+
+        <RadioButton
+            android:id="@+id/otherRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Other" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/otherPetTypeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:hint="Specify Pet Type (if Other)" />
+
+    <EditText
+        android:id="@+id/cardDetailsEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:hint="Card Details (e.g., Card Number)" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
+</LinearLayout>

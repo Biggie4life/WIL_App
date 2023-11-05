@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header Section (You can reuse your existing header layout) -->
+    <RelativeLayout
+        android:id="@+id/headerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pdsalogo"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
+
+    </RelativeLayout>
+
+    <!-- Services Section Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerSection">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Service 1: Register a Pet -->
+            <Button
+                android:id="@+id/btnRegisterPet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register a Pet"
+                android:onClick="navigateToRegisterPetActivity"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Service 2: Get Pet Insurance -->
+            <Button
+                android:id="@+id/btnInsurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get Pet Insurance"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Service 3: Set up Vet Appointments -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set up Vet Appointments"
+                android:onClick="navigateToAppointmentsActivity"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Service 4: Track Pets with RFID -->
+            <Button
+                android:id="@+id/btnTracker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tracker"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
