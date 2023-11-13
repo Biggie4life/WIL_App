@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.FragmentManager
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -23,6 +24,7 @@ class RegisterFragment : Fragment() {
     private lateinit var btnloginactivity: Button
 
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +42,7 @@ class RegisterFragment : Fragment() {
         registerButton = view.findViewById(R.id.registerButton)
         btnloginactivity = view.findViewById(R.id.btnloginactivity)
 
+        auth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance().reference.child("users")
 
         btnloginactivity.setOnClickListener {
@@ -56,18 +59,33 @@ class RegisterFragment : Fragment() {
             // Check for empty fields
             if (FirstName.isNotEmpty() && LastName.isNotEmpty() && Email.isNotEmpty() &&
                 PhoneNum.isNotEmpty() && Address.isNotEmpty() && password.isNotEmpty()) {
-                // Create a new user entry in the database
-                val user = User(FirstName, LastName, Email, PhoneNum, Address, password)
-                val userId = databaseReference.push().key
-                userId?.let {
-                    databaseReference.child(it).setValue(user)
-                }
-                // Registration successful, navigate to the home fragment
-                val fragmentManager = requireActivity().supportFragmentManager
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.fragment_container, HomeFragment())
-                transaction.commit()
-            } else {
+
+                auth.createUserWithEmailAndPassword(Email, password)
+                    .addOnCompleteListener(requireActivity()) { task ->
+                        if (task.isSuccessful) {
+                            // Registration successful
+                            val user = auth.currentUser
+
+                            // Create a new user entry in the database
+                            val userData = User(FirstName, LastName, Email, PhoneNum, Address, password)
+
+                            user?.let {
+                                val userId = it.uid  // Use the actual user ID from Firebase Authentication
+                                databaseReference.child(userId).setValue(userData)
+                                goToFragment(HomeFragment())
+                            }
+                        } else {
+                            // Handle registration failures
+                            val errorMessage = task.exception?.localizedMessage ?: "Registration failed."
+                            Toast.makeText(
+                                requireContext(),
+                                "Error: $errorMessage",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+            }else {
                 // Handle empty fields or other registration errors
                 Toast.makeText(requireContext(), "Failed to register.", Toast.LENGTH_SHORT).show()
             }

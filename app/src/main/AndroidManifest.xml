@@ -19,6 +19,15 @@
         android:theme="@style/Theme.WILApp"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VetAppointmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PetGroomingActivity"
+            android:exported="false" />
+        <activity
             android:name=".InsuranceActivity"
             android:exported="false" />
         <activity

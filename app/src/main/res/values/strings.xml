@@ -10,8 +10,25 @@
         <item>PayPal</item>
         <item>Bank Transfer</item>
         <item>Bitcoin</item>
-        <!-- Add more payment methods as needed -->
     </array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back_button_description" />
+
+    <array name="Pet_grooming">
+        <item>Pet Wash</item>
+        <item>Trim</item>
+        <item>Full house</item>
+    </array>
+
+    <array name="Groom_location">
+        <item>House call</item>
+        <item>In store</item>
+    </array>
+
+    <array name="soweto">
+        <item>Hospital &amp; Administrative</item>
+        <item>Pimville Clinic</item>
+    </array>
+
 </resources>

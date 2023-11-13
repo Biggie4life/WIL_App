@@ -3,6 +3,7 @@ package com.example.wilapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -11,6 +12,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -48,9 +50,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_Services -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ServicesFragment()).commit()
-            R.id.nav_Tracker -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ShopFragment()).commit()
-            R.id.nav_logout -> supportFragmentManager.beginTransaction()
+            R.id.nav_Account -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, RegisterFragment()).commit()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -62,6 +62,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else {
             onBackPressedDispatcher.onBackPressed()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_menu, menu)
+        return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        val groupLoggedIn = menu?.findItem(R.id.group_logged_in)
+
+        // Check if the user is authenticated
+        val auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+
+        // Show/hide the "Logout" menu item based on authentication status
+        groupLoggedIn?.isVisible = (currentUser != null)
+
+        return super.onPrepareOptionsMenu(menu)
     }
 
 

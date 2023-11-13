@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    tools:context=".PetGroomingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:text="Grooming"/>
+
+    <TextView
+        android:id="@+id/txtpetgroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:text="Grooming Option"
+        android:textSize="20sp" />
+
+
+    <Spinner
+        android:id="@+id/dropdownList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtpetgroom"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/black"
+        android:entries="@array/Pet_grooming"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dropdownList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:text="Location"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/ddlLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLocation"
+        android:layout_marginTop="35dp"
+        android:entries="@array/Groom_location"
+        android:textColor="@color/black"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/addressEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your address"
+        android:inputType="textPostalAddress"
+        android:layout_below="@+id/ddlLocation"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="35dp"
+        android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvSoweto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ddlLocation"
+            android:layout_marginTop="30dp"
+            android:text="Our location in Soweto"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="gone" />
+    <Spinner
+        android:id="@+id/ddlsoweto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSoweto"
+        android:layout_marginTop="35dp"
+        android:entries="@array/soweto"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/setAppointmentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="500dp"
+        android:text="Set Appointment"/>
+</RelativeLayout>
+</ScrollView>

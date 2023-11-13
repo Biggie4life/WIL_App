@@ -12,12 +12,14 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+
         <TextView
             android:id="@+id/registerHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
             android:textSize="40sp"
+            android:textColor="@color/black"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="30dp" />
@@ -31,6 +33,8 @@
             android:layout_below="@+id/registerHeading"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="Email" />
 
         <EditText
@@ -41,6 +45,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="10dp"
             android:hint="Password"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:inputType="textPassword" />
 
         <Button
@@ -55,10 +61,21 @@
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/btnregisteractiviy"
+            android:id="@+id/btnforgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/loginButton"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="Forgot Password"
+            android:backgroundTint="#0077FF"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnregisteractiviy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnforgot"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
             android:text="Don't have an account? Register"

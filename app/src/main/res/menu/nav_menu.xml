@@ -14,25 +14,29 @@
             android:icon="@drawable/baseline_settings_24"
             android:title="Settings"/>
         <item
-            android:id="@+id/nav_Tracker"
-            android:icon="@drawable/icons8shop"
-            android:title="Shop"/>
-        <item
             android:id="@+id/nav_aboutUs"
             android:icon="@drawable/icons8_philanthropy"
             android:title="Donate"/>
         <item
             android:id="@+id/nav_Services"
             android:icon="@drawable/icons"
-            android:title="Services"/>
+            android:title="Services" />
     </group>
     <item
         android:title="">
         <menu>
             <item
-                android:id="@+id/nav_logout"
+                android:id="@+id/nav_Account"
                 android:icon="@drawable/baseline_account_circle_24"
-                android:title="Login"/>
+                android:title="Account"/>
         </menu>
     </item>
+
+    <group
+        android:id="@+id/group_logged_in"
+        android:visible="false">
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout" />
+    </group>
 </menu>

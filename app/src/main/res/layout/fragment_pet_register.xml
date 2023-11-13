@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <TextView
             android:id="@+id/textViewHeading"
             android:layout_width="wrap_content"
@@ -21,7 +22,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
 
         <EditText
             android:id="@+id/petTypeEditText"
@@ -32,7 +35,8 @@
             android:layout_below="@id/textViewHeading"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"/>
 
         <EditText
             android:id="@+id/petNameEditText"
@@ -40,6 +44,8 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:hint="Pet Name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:layout_below="@id/petTypeEditText"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"/>
@@ -50,6 +56,8 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:hint="Age"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:layout_below="@id/petNameEditText"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"/>
@@ -60,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ageEditText"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            >
             <TextView
                 android:id="@+id/VacHeading"
                 android:layout_width="wrap_content"
@@ -70,17 +79,21 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
             <RadioButton
                 android:id="@+id/yesRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="Yes"/>
 
             <RadioButton
                 android:id="@+id/noRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="No"/>
         </RadioGroup>
 
@@ -91,6 +104,7 @@
             android:visibility="gone"
             android:layout_below="@id/vaccinationRadioGroup"
             android:layout_marginTop="16dp"
+            android:calendarTextColor="@color/black"
             android:layout_marginBottom="16dp"/>
 
         <Button

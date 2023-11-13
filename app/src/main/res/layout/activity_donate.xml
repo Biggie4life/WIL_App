@@ -6,16 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".DonateActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Donate to Support Our Cause"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
     <EditText
         android:id="@+id/customAmountEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Custom Amount"
+        android:layout_above="@+id/payment_button_container"
+        android:hint="Enter Amount"
         android:inputType="number"
-        android:layout_above="@+id/payment_button_container" />
+        android:minHeight="48dp" />
 
     <com.paypal.checkout.paymentbutton.PaymentButtonContainer
         android:id="@+id/payment_button_container"

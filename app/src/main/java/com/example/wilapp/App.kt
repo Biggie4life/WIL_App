@@ -11,7 +11,7 @@ import com.paypal.checkout.createorder.UserAction
 class App: Application() {
 
     var clientID = "AY2j0F-O6hV9AYAccP3Gg8SPF6HjSyrAe83Lo0hUXvrVGDm78eFoxsNzsDA2NQglhrXqObUOegjhfjJo"
-    var returnUrl = "com.example.myshop://paypalpay"
+    var returnUrl = "com.example.wilapp://paypalpay"
 
     override fun onCreate() {
         super.onCreate()

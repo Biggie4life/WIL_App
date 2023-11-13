@@ -15,6 +15,8 @@ class ServicesFragment : Fragment() {
     private lateinit var btnRegisterPet: Button
     private lateinit var btnTracker: Button
     private lateinit var btnInsurance: Button
+    private lateinit var btnGrooming: Button
+    private lateinit var btnvat: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +28,8 @@ class ServicesFragment : Fragment() {
         btnRegisterPet = view.findViewById(R.id.btnRegisterPet)
         btnTracker = view.findViewById(R.id.btnTracker)
         btnInsurance = view.findViewById(R.id.btnInsurance)
+        btnGrooming = view.findViewById(R.id.btnGrbooming)
+        btnvat= view.findViewById(R.id.vet)
         return view
     }
 
@@ -43,6 +47,16 @@ class ServicesFragment : Fragment() {
 
         btnInsurance.setOnClickListener {
             val intent = Intent(requireContext(), InsuranceActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnGrooming.setOnClickListener {
+            val  intent = Intent(requireContext(), PetGroomingActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnvat.setOnClickListener {
+            val  intent = Intent(requireContext(), VetAppointmentsActivity::class.java)
             startActivity(intent)
         }
     }

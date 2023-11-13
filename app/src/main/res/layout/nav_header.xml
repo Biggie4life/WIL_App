@@ -9,12 +9,4 @@
     android:background="@drawable/logo"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="www.pdsa.org.za"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:layout_marginBottom="16dp"/>
 </LinearLayout>

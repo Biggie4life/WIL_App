@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
 
         loadWebPageButton.setOnClickListener {
             // Create an Intent to open the web page in a browser
-            val webpage = Uri.parse("https://www.pdsa.org.za/")
+            val webpage = Uri.parse("https://pdsa20231113114300.azurewebsites.net/")
             val intent = Intent(Intent.ACTION_VIEW, webpage)
 
             // Verify that the intent will resolve to an activity

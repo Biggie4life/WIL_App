@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Header Section (You can reuse your existing header layout) -->
+
     <RelativeLayout
         android:id="@+id/headerSection"
         android:layout_width="match_parent"
@@ -53,10 +53,10 @@
 
             <!-- Service 3: Set up Vet Appointments -->
             <Button
+                android:id="@+id/vet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Set up Vet Appointments"
-                android:onClick="navigateToAppointmentsActivity"
                 android:layout_marginTop="16dp"/>
 
             <!-- Service 4: Track Pets with RFID -->
@@ -65,6 +65,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tracker"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:id="@+id/btnGrbooming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pet Grooming"
                 android:layout_marginTop="16dp"/>
 
         </LinearLayout>

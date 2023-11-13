@@ -3,6 +3,7 @@ package com.example.wilapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.wilapp.databinding.ActivityDonateBinding
@@ -29,11 +30,15 @@ class DonateActivity : AppCompatActivity() {
         binding = ActivityDonateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         binding.paymentButtonContainer.setup(
             createOrder = CreateOrder { createOrderActions ->
                 val customAmountEditText = findViewById<EditText>(R.id.customAmountEditText)
                 val customAmountText = customAmountEditText.text.toString()
-                val customAmount = if (customAmountText.isNotEmpty()) customAmountText else "10.00"
+                val customAmount = if (customAmountText.isNotEmpty()) customAmountText else "1.00"
 
                 val order = OrderRequest(
                     intent = OrderIntent.CAPTURE,
@@ -67,5 +72,10 @@ class DonateActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
